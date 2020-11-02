@@ -5,7 +5,7 @@
   [a b]
   (+ a b))
 
-(defn substract
+(defn subtract
   "subtract 2 numbers"
   [a b]
   (- a b))
@@ -32,6 +32,6 @@
   (let [a (read-line) b (read-line)]
     (cond
       (= choice "sum") (println "Result is" (sum (parse-int a) (parse-int b)))
-      (= choice "substraction") (println "Result is" (substract (parse-int a) (parse-int b)))
+      (= choice "subtraction") (println "Result is" (subtract (parse-int a) (parse-int b)))
       (= choice "multiplication") (println "Result is" (multiply (parse-int a) (parse-int b)))
       (= choice "division") (println "Result is" (divide (parse-int a) (parse-int b))))))

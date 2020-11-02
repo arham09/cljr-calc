@@ -26,16 +26,21 @@
   [s]
   (Integer. (re-find  #"\d+" s )))
 
+(defn calculate
+  "Calculate based on input"
+  [choice]
+  (println "Insert Two Numbers")
+  (let [a (read-line) b (read-line)]
+    (cond
+      (= choice "sum") (println "Result is" (sum (parse-int a) (parse-int b)))
+      (= choice "substraction") (println "Result is" (substract (parse-int a) (parse-int b)))
+      (= choice "multiplication") (println "Result is" (multiply (parse-int a) (parse-int b)))
+      (= choice "division") (println "Result is" (divide (parse-int a) (parse-int b))))))
+
 (defn -main
   "Main calculator func"
   [& args]
   (println "1. sum \n2. division \n3. multiplication \n4. subtraction")
   (println "Enter number fo your choice")
   (let [choice (read-line)]
-    (println "Enter your number")
-    (cond
-      (= choice "sum") (let [a (read-line) b (read-line)] (println "Result is" (sum (parse-int a) (parse-int b))))
-      (= choice "division") (let [a (read-line) b (read-line)] (println "Result is" (divide (parse-int a) (parse-int b))))
-      (= choice "multiplication") (let [a (read-line) b (read-line)] (println "Result is" (multiply (parse-int a) (parse-int b))))
-      (= choice "subtraction") (let [a (read-line) b (read-line)] (println "Result is" (substract (parse-int a) (parse-int b))))
-      :else (println "Invalid choice"))))
+    (calculate choice)))

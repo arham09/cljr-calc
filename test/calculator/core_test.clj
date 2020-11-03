@@ -1,7 +1,9 @@
 (ns calculator.core-test
   (:require [clojure.test :refer :all]
+            [calculator.calculator :as calculator]
             [calculator.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest sum-test
+  (testing "Sum Function of calculator"
+    (is (= 6 (calculator/sum 3 3)))))
+
